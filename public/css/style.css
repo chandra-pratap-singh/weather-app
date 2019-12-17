@@ -1,0 +1,16 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+header{
+    padding:10px;
+    color:white;
+    background-color: black;
+}
+.container{
+    text-align: center;
+    padding:100px;
+}
+#output{
+    padding: 100px;
+}
