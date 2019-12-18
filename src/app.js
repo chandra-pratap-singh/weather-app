@@ -8,7 +8,7 @@ const app = express();
 const partialpath = path.join(__dirname,'../partials');
 const viewpath = path.join(__dirname,'../views');
 const publicPath = path.join(__dirname, '../public');
-
+const port = process.env.PORT || 3000;
 
 
 app.set('view engine','hbs');
@@ -53,6 +53,6 @@ app.get("/weather",(req,res)=>{
     
 })
 
-app.listen(3000,()=>{
-    console.log("server listening at port 3000");
+app.listen(port,()=>{
+    console.log("server listening at port "+port);
 })
