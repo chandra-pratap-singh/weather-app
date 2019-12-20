@@ -1,16 +1,14 @@
- window.onload = async ()=>{
-     document.getElementById("city-button").addEventListener('click',async ()=>{
-        document.getElementById('output').innerHTML = "Loading..."
-        const city = document.getElementById("city").value;
-        const url = `/weather?city=${city}`;
-        const response = await fetch(url);
-        const myJson = await response.json();
-        if(myJson.error)
-        {
-            document.getElementById('output').innerHTML = myJson.message;
-        }
-        else{
-            document.getElementById('output').innerHTML = `
+window.onload = async () => {
+  document.getElementById("city-button").addEventListener("click", async () => {
+    document.getElementById("output").innerHTML = "Loading...";
+    const city = document.getElementById("city").value;
+    const url = `/weather?city=${city}`;
+    const response = await fetch(url);
+    const myJson = await response.json();
+    if (myJson.error) {
+      document.getElementById("output").innerHTML = myJson.message;
+    } else {
+      document.getElementById("output").innerHTML = `
             <table class="table table-bordered">
             <tr>
             <td>Temperature:</td>
@@ -38,7 +36,7 @@
             </tr>
             </table>
             `;
-        }
-        console.log(JSON.stringify(myJson));
-     })
- }
+    }
+    console.log(JSON.stringify(myJson));
+  });
+};
